@@ -1,0 +1,74 @@
+#include <iostream>
+ 
+using namespace std;
+ 
+int main()
+{
+    const int n = 7;
+    int x[n] = {-4, 32, 10, 1, 134, -1, 43};
+    int max = x[0], min = x[0];
+    for (int i = 1; i < n; i++)
+    {
+        if (x[i] % 2 == 0 && x[i] > max)
+        {
+            max = x[i];
+        }
+        if (x[i] < min)
+        {
+            min = x[i];
+        }
+    }
+    cout << "max1 = " << max << '\n';
+    cout << "max2 = " << min << '\n';
+    return 0;
+}
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <locale.h>
+ 
+#define n1 6
+#define n2 9
+int main(){
+    srand(time(0));
+ 
+    int array_a[n1][n2];
+    int i, j, k;
+
+    int summ = 0;
+ 
+    printf("Исходная матрица:\n");
+    for(i = 0; i < n1; i++){
+        for(j = 0; j < n2; j++){
+            array_a[i][j] = rand()%9+1;
+            printf("%d ", array_a[i][j]);
+        }
+        printf("\n");
+    }
+ 
+ 
+    for(j = 1; j < n1; j += 2){
+        if(array_a[j] == 0)
+            k++;
+        
+    }
+    printf("Количество нулей: %d\n", k);
+    
+    for(i = 3; i < n1; i++){
+        for(j = 0; j < n2; j++){
+            summ += array_a[i][j];
+        }
+    }
+    printf("Сумма элементов заштрихованной области: %d\n", summ);
+    
+    return 0;
+}
+
+
+
+
