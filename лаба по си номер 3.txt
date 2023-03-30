@@ -1,0 +1,83 @@
+#include <stdio.h>
+
+#include <time.h>
+ 
+void GetMinMax(int* a, int size, int* max){
+        *max = *a;
+        int i = 0;
+        for (i = 1; i < size; i++)
+        {
+                if ( *max < a[i] ) *max = a[i];
+        }
+}
+
+
+void CheckPos(int* a, int size){
+        for(int i = 0; i < size; i++)
+    {
+          
+            int value = *(a + i);   
+        printf("array[%d]:   value=%d \n", i, value);
+    }
+}
+#define Na 5
+#define Nb 3
+ 
+int main()
+{
+        int a[Na] = {10, 20, -3, 60, 1};
+        int b[Nb] = {-5, 2, 10};
+        int max = 0;
+
+  
+        GetMinMax(&a[0], Na, &max);
+        printf(" maxA: %d\n\n",  max);
+        CheckPos(&a[0],Na);
+
+          
+        GetMinMax(&b[0], Nb, &max);
+        printf("\n maxB: %d\n\n",  max);
+        CheckPos(&b[0],Nb);
+        
+  
+
+  
+  
+  
+
+        
+return 0;
+}
+
+
+
+
+
+// int a[Na];
+// int b[Nb];
+// int i;
+// for(i=0;i<Na;i++)
+// {
+//   printf("%s%d%s\n","Enter element a[",i,"]:");
+//   scanf("%d",&a[i]);
+// }
+// for(i=0;i<Nb;i++)
+// {
+//   printf("%s%d%s\n","Enter element b[",i,"]:");
+//   scanf("%d",&b[i]);
+// }
+
+
+
+https://replit.com/languages/c
+
+
+
+int MatrixSum(int** a, const int rows, const int cols, int col){
+  int sum = 0;
+  for (int i = 0 ; i< rows / 2 ; i++);
+    sum+=a[i][col];
+  return sum;
+  
+}
+  
